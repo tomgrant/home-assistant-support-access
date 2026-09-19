@@ -1,0 +1,49 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Support Access",
+        "description": "Select the Home Assistant users whose remote login you want to control. Typical use: a support/technician account that should only reach your home when you turn access on.",
+        "data": {
+          "user_ids": "Users"
+        },
+        "data_description": {
+          "user_ids": "Choose one or more existing users. Create a dedicated support user in Settings → People first if needed."
+        }
+      }
+    },
+    "error": {
+      "no_users": "Select at least one user.",
+      "invalid_user": "One of the selected users no longer exists."
+    },
+    "abort": {
+      "already_configured": "Support Access is already configured. Use Configure to change managed users."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Managed users",
+        "description": "Choose which users Support Access should control.",
+        "data": {
+          "user_ids": "Users"
+        }
+      }
+    },
+    "error": {
+      "no_users": "Select at least one user."
+    }
+  },
+  "entity": {
+    "switch": {
+      "remote_access": {
+        "name": "Remote access"
+      }
+    },
+    "binary_sensor": {
+      "local_only_access": {
+        "name": "Local only access"
+      }
+    }
+  }
+}
