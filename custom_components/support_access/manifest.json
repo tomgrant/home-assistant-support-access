@@ -7,5 +7,5 @@
   "integration_type": "service",
   "iot_class": "local_push",
   "issue_tracker": "https://github.com/tomgrant/home-assistant-support-access/issues",
-  "version": "1.1.0"
+  "version": "1.1.1"
 }
