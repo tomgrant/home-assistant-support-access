@@ -1,6 +1,6 @@
 # Highlands Support Access
 
-![Highlands Smart Homes](custom_components/support_access/brand/icon.png)
+<img src="custom_components/support_access/brand/icon.png" alt="Highlands Smart Homes" width="96" height="96">
 
 A [Highlands Smart Homes](https://highlandssmarthomes.com.au) Home Assistant integration that lets a homeowner temporarily grant **remote login** to selected users (for example a Highlands support technician), then lock them back to **local-network only**.
 
