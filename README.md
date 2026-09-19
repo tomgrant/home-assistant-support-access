@@ -1,6 +1,8 @@
-# Support Access
+# Highlands Support Access
 
-Home Assistant custom integration that lets a homeowner temporarily grant **remote login** to selected users (for example a support technician), then lock them back to **local-network only**.
+![Highlands Smart Homes](brand/icon.png)
+
+A [Highlands Smart Homes](https://highlandssmarthomes.com.au) Home Assistant integration that lets a homeowner temporarily grant **remote login** to selected users (for example a Highlands support technician), then lock them back to **local-network only**.
 
 It uses Home Assistant's built-in per-user *“Can only log in from the local network”* (`local_only`) setting.
 
@@ -25,9 +27,9 @@ Turning the switch **off** also revokes that user's active browser/app sessions,
 
 1. In HACS go to **Integrations** → menu (**⋮**) → **Custom repositories**
 2. Add this repository URL as category **Integration**
-3. Find **Support Access** in HACS and install it
+3. Find **Highlands Support Access** in HACS and install it
 4. Restart Home Assistant
-5. Go to **Settings → Devices & Services → Add Integration** → **Support Access**
+5. Go to **Settings → Devices & Services → Add Integration** → **Highlands Support Access**
 6. Select the user(s) to manage
 
 ### Manual install
@@ -36,16 +38,16 @@ Copy `custom_components/support_access` into your Home Assistant `config/custom_
 
 ## Typical workflow
 
-1. Create a user such as `support` (admin or limited, as you prefer).
-2. Add that user in the Support Access config flow.
+1. Create a user such as `highlands_support` (admin or limited, as you prefer).
+2. Add that user in the Highlands Support Access config flow.
 3. Leave **Remote access** off until help is needed.
-4. When support needs remote access, turn the switch **on** (or automate it).
+4. When Highlands support needs remote access, turn the switch **on** (or automate it).
 5. When finished, turn the switch **off**.
 
 Example automation:
 
 ```yaml
-alias: Enable support remote access for 2 hours
+alias: Enable Highlands support remote access for 2 hours
 triggers:
   - trigger: event
     event_type: mobile_app_notification_action
@@ -54,11 +56,11 @@ triggers:
 actions:
   - action: switch.turn_on
     target:
-      entity_id: switch.support_remote_access
+      entity_id: switch.highlands_support_remote_access
   - delay: "02:00:00"
   - action: switch.turn_off
     target:
-      entity_id: switch.support_remote_access
+      entity_id: switch.highlands_support_remote_access
 ```
 
 ## Notes
@@ -69,7 +71,11 @@ actions:
 
 ## Changing managed users
 
-**Settings → Devices & Services → Support Access → Configure**
+**Settings → Devices & Services → Highlands Support Access → Configure**
+
+## About Highlands Smart Homes
+
+[highlandssmarthomes.com.au](https://highlandssmarthomes.com.au)
 
 ## License
 

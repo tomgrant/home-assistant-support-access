@@ -11,7 +11,7 @@ from homeassistant.core import HomeAssistant, callback
 from homeassistant.data_entry_flow import FlowResult
 from homeassistant.helpers import selector
 
-from .const import CONF_USER_IDS, DOMAIN
+from .const import CONF_USER_IDS, DOMAIN, INTEGRATION_NAME
 
 
 async def _user_options(hass: HomeAssistant) -> list[dict[str, str]]:
@@ -72,9 +72,9 @@ class SupportAccessConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                         break
                     names.append(user.name or user_id)
                 if not errors:
-                    title = "Support Access"
+                    title = INTEGRATION_NAME
                     if len(names) == 1:
-                        title = f"Support Access ({names[0]})"
+                        title = f"{INTEGRATION_NAME} ({names[0]})"
                     return self.async_create_entry(
                         title=title,
                         data={CONF_USER_IDS: user_ids},

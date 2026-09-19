@@ -1,11 +1,11 @@
 {
   "domain": "support_access",
-  "name": "Support Access",
+  "name": "Highlands Support Access",
   "codeowners": ["@tomgrant"],
   "config_flow": true,
   "documentation": "https://github.com/tomgrant/home-assistant-support-access",
   "integration_type": "service",
   "iot_class": "local_push",
   "issue_tracker": "https://github.com/tomgrant/home-assistant-support-access/issues",
-  "version": "1.0.0"
+  "version": "1.1.0"
 }

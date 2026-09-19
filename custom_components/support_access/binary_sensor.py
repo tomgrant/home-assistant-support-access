@@ -17,7 +17,14 @@ from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from . import get_managed_user_ids
-from .const import ATTR_USER_ID, ATTR_USER_NAME, DOMAIN
+from .const import (
+    ATTR_USER_ID,
+    ATTR_USER_NAME,
+    BRAND_URL,
+    DOMAIN,
+    MANUFACTURER,
+    MODEL_SUPPORT_USER,
+)
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -60,8 +67,9 @@ class LocalOnlyBinarySensor(BinarySensorEntity):
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, user.id)},
             name=user.name or f"User {user.id[:8]}",
-            manufacturer="Home Assistant",
-            model="Support user",
+            manufacturer=MANUFACTURER,
+            model=MODEL_SUPPORT_USER,
+            configuration_url=BRAND_URL,
         )
 
     @property

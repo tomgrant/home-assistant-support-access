@@ -2,13 +2,13 @@
   "config": {
     "step": {
       "user": {
-        "title": "Support Access",
-        "description": "Select the Home Assistant users whose remote login you want to control. Typical use: a support/technician account that should only reach your home when you turn access on.",
+        "title": "Highlands Support Access",
+        "description": "Choose which Home Assistant users Highlands Smart Homes support can reach remotely. Keep remote access off until you need help, then turn it on from a dashboard or automation.",
         "data": {
           "user_ids": "Users"
         },
         "data_description": {
-          "user_ids": "Choose one or more existing users. Create a dedicated support user in Settings → People first if needed."
+          "user_ids": "Select your Highlands support account (or another technician user). Create one under Settings → People first if needed."
         }
       }
     },
@@ -17,14 +17,14 @@
       "invalid_user": "One of the selected users no longer exists."
     },
     "abort": {
-      "already_configured": "Support Access is already configured. Use Configure to change managed users."
+      "already_configured": "Highlands Support Access is already configured. Use Configure to change managed users."
     }
   },
   "options": {
     "step": {
       "init": {
         "title": "Managed users",
-        "description": "Choose which users Support Access should control.",
+        "description": "Choose which users Highlands Support Access should control.",
         "data": {
           "user_ids": "Users"
         }

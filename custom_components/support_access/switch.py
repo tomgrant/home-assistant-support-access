@@ -18,7 +18,10 @@ from .const import (
     ATTR_LOCAL_ONLY,
     ATTR_USER_ID,
     ATTR_USER_NAME,
+    BRAND_URL,
     DOMAIN,
+    MANUFACTURER,
+    MODEL_SUPPORT_USER,
 )
 
 _LOGGER = logging.getLogger(__name__)
@@ -61,8 +64,9 @@ class RemoteAccessSwitch(SwitchEntity):
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, user.id)},
             name=user.name or f"User {user.id[:8]}",
-            manufacturer="Home Assistant",
-            model="Support user",
+            manufacturer=MANUFACTURER,
+            model=MODEL_SUPPORT_USER,
+            configuration_url=BRAND_URL,
         )
 
     @property
